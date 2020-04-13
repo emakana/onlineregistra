@@ -1,0 +1,21 @@
+
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id No</th>
+          <th scope="col">FullName</th>
+          <th scope="col">DateCreated</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.idNo }}</td>
+          <td>{{ user.fullName }}</td>
+          <td>{{ user.createdAt }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

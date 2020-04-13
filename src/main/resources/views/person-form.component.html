@@ -1,0 +1,29 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" [(ngModel)]="user.fullname" 
+          class="form-control"
+          id="fullname"
+          name="fullname"
+          placeholder="Enter your full name"
+          required #fullname="ngModel">
+      </div>
+      <div [hidden]="!fullname.pristine" class="alert alert-danger">Full Name is required</div>
+      <div class="form-group">
+        <label for="idno">Id No</label>
+        <input type="text" [(ngModel)]="user.idNo" 
+          class="form-control"
+          id="idno"
+          name="idno"
+          placeholder="Enter your ID No"
+          required #idno="ngModel">
+        <div [hidden]="!idno.pristine" class="alert alert-danger">ID Number is required</div>
+      </div>
+      <button type="submit" [disabled]="!userForm.form.valid" 
+        class="btn btn-info">Submit</button>
+    </form>
+  </div>
+
+</div>
